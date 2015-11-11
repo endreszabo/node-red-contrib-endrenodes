@@ -1,0 +1,85 @@
+<!--
+  Copyright 2014 Nicholas Humfrey.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="osc encoder">
+    <div class="form-row">
+		<!--<label for="node-input-bufsize" id="node-input-bufsize-label"><i class="icon-list"></i> buffer size in bytes</label>-->
+		Send payload <select type="text" id="node-config-input-bundle">
+			<option value="true">in bundle</option>
+			<option value="false">as is</option>
+		</select> with output of <select type="text" id="node-config-input-base64">
+			<option value="false">Buffer</option>
+			<option value="true">base64</option>
+		</select> encapsulation.
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="osc encoder">
+	<p>A osc encoder that converts individual node payloads to osc-encoded bytestream</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('osc encoder', {
+        category: 'function',
+        color:"#396FA2",
+        defaults: {
+            bundle: {value: "true", required:true, validate:RED.validators.number()},
+            base64: {value: "false", required:true, validate:RED.validators.number()},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"OSC enc";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="osc decoder">
+    <div class="form-row">
+		Send payload <select type="text" id="node-config-input-simplify">
+			<option value="true">simplified one-by-one</option>
+			<option value="false">as is, bundled</option>
+		</select>.
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="osc decoder">
+	<p>A osc decoder, that converts OSC encoded packets to individual node payloads.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('osc decoder', {
+        category: 'function',
+        color:"#396FA2",
+        defaults: {
+            simplify: {value: "true", required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "icon.png",
+        label: function() {
+            return this.name||"OSC dec";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+

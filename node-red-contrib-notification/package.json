@@ -1,8 +1,10 @@
 {
-	"name": "node-red-notification",
+	"name": "node-red-contrib-notification",
 	"version": "0.0.2",
 	"description": "A notification node that uses native DBus",
-	"dependencies": { },
+	"dependencies": {
+		"dbus-native": ">=0.2.0"
+	},
 	"keywords": [ "node-red" ],
 	"node-red": {
 		"nodes": {

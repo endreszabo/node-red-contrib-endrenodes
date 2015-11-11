@@ -1,0 +1,13 @@
+{
+	"name": "node-red-contrib-osc",
+	"version": "0.0.1",
+	"description": "An OSC decoder/encoder",
+	"dependencies": {
+	},
+	"keywords": [ "node-red" ],
+	"node-red": {
+		"nodes": {
+			"osc": "50-osc.js"
+		}
+	}
+}

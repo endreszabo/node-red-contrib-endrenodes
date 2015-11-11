@@ -1,0 +1,13 @@
+{
+	"name": "node-red-contrib-slip",
+	"version": "0.0.1",
+	"description": "An slip framing decoder/encoder",
+	"dependencies": {
+	},
+	"keywords": [ "node-red" ],
+	"node-red": {
+		"nodes": {
+			"slip": "50-slip.js"
+		}
+	}
+}
