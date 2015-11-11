@@ -1,0 +1,49 @@
+<script type="text/x-red" data-template-name="notification">
+	<div class="form-row">
+		<label for="node-input-appname"><i class="fa fa-edit"></i> App name</label>
+		<input type="text" id="node-input-appname" placeholder="Node-RED">
+	</div>
+	<div class="form-row">
+		<label for="node-input-timeout"><i class="fa fa-edit"></i> Timeout</label>
+		<input type="text" id="node-input-timeout" placeholder="60">
+	</div>
+	<div class="form-row">
+		<label for="node-input-imagepath"><i class="fa fa-edit"></i> Image path</label>
+		<input type="text" id="node-input-imagepath" placeholder="">
+	</div>
+	<div class="form-row">
+		<label for="node-input-closemsg"><i class="fa fa-check-square-o"></i> Send dismissal message?</label>
+		<input type="checkbox" id="node-input-closemsg" placeholder="">
+	</div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="notification">
+	<p>FIXME</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('notification', {
+		category: 'function',
+		defaults: {
+			appname: {value: "Node-RED", required: true},
+			timeout: {value: 60, required: false, validate: RED.validators.number()},
+			imagepath: {value: "", required: false },
+			closemsg: {value: true, required: false }
+		},
+		color:"#a7c9a0",
+		inputs: 1,
+		outputs: 1,
+		icon: "alert.png",
+		align: "right",
+		label: function() {
+			return this.name||this.title||"notification";
+		},
+		labelStyle: function() {
+			return this.name?"node_label_italic":"";
+		}
+	});
+</script>

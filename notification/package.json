@@ -1,0 +1,12 @@
+{
+	"name": "node-red-notification",
+	"version": "0.0.2",
+	"description": "A notification node that uses native DBus",
+	"dependencies": { },
+	"keywords": [ "node-red" ],
+	"node-red": {
+		"nodes": {
+			"notification": "50-notification.js"
+		}
+	}
+}
